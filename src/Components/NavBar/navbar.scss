@@ -1,0 +1,44 @@
+// navbar.scss
+
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .navbar-logo {
+    margin-left: 2rem;
+    display: flex;
+    img {
+      width: 5rem;
+    }
+  }
+  .navbar-links {
+    display: flex;
+
+    .socials {
+      display: flex;
+      border-right: 1px solid black;
+      ul {
+        display: flex;
+        padding: 0.5rem;
+
+        li {
+          padding: 0.5rem;
+          list-style: none;
+        }
+      }
+    }
+    ul {
+      display: flex;
+      padding: 0.5rem;
+
+      li {
+        padding: 0.5rem;
+        list-style: none;
+      }
+    }
+  }
+}
