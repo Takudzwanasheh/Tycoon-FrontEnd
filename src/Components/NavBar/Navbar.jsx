@@ -2,44 +2,52 @@ import React from "react";
 import vennis from "./Vennis.png";
 import "./navbar.scss";
 import MenuIcon from "@mui/icons-material/Menu";
-
+import { Instagram, Facebook, X, YouTube, Person } from "@mui/icons-material";
+import { NavLink } from "react-router-dom";
+import About from "../About/About";
 export default function Navbar() {
   return (
     <header className="navbar">
-      {/* <div><MenuIcon /></div> */}
       <div className="navbar-logo">
+        <MenuIcon />
         <img src={vennis} alt="Logo" />
-        <h1>Vennis Resources</h1>
+        <h1>
+          <NavLink to={"/"}>Vennis Resources</NavLink>
+        </h1>
       </div>
       <div className="navbar-links">
         <div className="socials">
           <ul>
             <li>
-              <a href="#home">Home</a>
+              <NavLink href="https://www.instagram.com/toprockgemstones">
+                <Instagram />
+              </NavLink>
             </li>
             <li>
-              <a href="#about">About</a>
+              <NavLink href="">
+                <Facebook />
+              </NavLink>
             </li>
             <li>
-              <a href="#services">Services</a>
+              <NavLink href="https://x.com/i/flow/login?redirect_after_login=%2FtoprockgemsZA">
+                <X />
+              </NavLink>
             </li>
             <li>
-              <a href="#contact">Contact</a>
+              <NavLink href="https://www.youtube.com/@TakudzwaNgaiso">
+                <YouTube />
+              </NavLink>
             </li>
           </ul>
         </div>
         <ul>
           <li>
-            <a href="#home">Home</a>
+            <NavLink to={"/about"}>About</NavLink>
           </li>
           <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#services">Services</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
+            <NavLink to={"./login"}>
+              <Person />
+            </NavLink>
           </li>
         </ul>
       </div>

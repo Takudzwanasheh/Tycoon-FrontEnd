@@ -1,5 +1,4 @@
-// Sample data with more products
-const products = [
+const new_products = [
   {
     id: 1,
     name: "Agate",
@@ -71,4 +70,4 @@ const products = [
   },
 ];
 
-export default products;
+export default new_products;

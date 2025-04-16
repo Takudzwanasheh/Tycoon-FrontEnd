@@ -37,7 +37,6 @@ export default function About() {
           <button>Subscribe</button>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

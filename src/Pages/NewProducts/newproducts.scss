@@ -1,31 +1,17 @@
 .card {
-  width: max-content;
+  width: 15rem;
   border: 1px solid black;
-  position: relative;
+  height: 20rem;
+  overflow: hidden;
   padding: 0.1rem;
   line-height: 1rem;
-  .card-image-container {
-    position: relative;
-    .cardButton {
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-      background-color: #ffff;
-
-      &:hover {
-        background-color: bluer;
-        color: white;
-      }
-    }
-  }
   img {
     width: 15rem;
   }
 }
 
 .card-section-container {
-  position: relative;
-  img {
+  .zoomable-image {
     transition: transform 0.3s ease-in-out;
     &:hover {
       transform: scale(1.1);

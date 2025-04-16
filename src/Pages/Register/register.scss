@@ -1,0 +1,74 @@
+.LoginContainer {
+  background: linear-gradient(90deg, #f3f4f6 0%, #e5e7eb 100%);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  .login {
+    -webkit-box-shadow: 0px 7px 17px 6px rgba(0, 0, 0, 0.71);
+    -moz-box-shadow: 0px 7px 17px 6px rgba(0, 0, 0, 0.71);
+    box-shadow: 0px 7px 17px 6px rgba(0, 0, 0, 0.71);
+    display: flex;
+    width: 50%;
+    padding: 1rem;
+    flex-direction: column;
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 5rem;
+      }
+    }
+    h3 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
+    .loginForm {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+
+      button {
+        width: 30%;
+        padding: 0.3rem;
+        align-self: center;
+        &:hover {
+          background-color: blue;
+          color: #fff;
+        }
+      }
+
+      .loginInputs {
+        display: flex;
+        flex-direction: column;
+
+        input {
+          width: 100%;
+          padding: 0.3rem 1rem;
+          border: 1px solid #ccc;
+        }
+        span {
+          font-weight: 500;
+        }
+      }
+    }
+
+    .rememberMe {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

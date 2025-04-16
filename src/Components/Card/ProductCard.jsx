@@ -5,12 +5,13 @@ export default function ProductCard() {
   const ProductCard = ({ product }) => {
     return (
       <div className="card">
-        <img src={product.image} alt={product.name} />
+        <div className="card-image-container">
+          <img src={product.image} alt={product.name} className="card-image" />
+          <button className="cardButton">Add to Cart</button>
+        </div>
         <h3>{product.name}</h3>
         <p>{product.description}</p>
         <p>{product.price}</p>
-        <button>Add to </button>
-        <button>Details</button>
       </div>
     );
   };
@@ -18,7 +19,6 @@ export default function ProductCard() {
   return (
     <div>
       <div className="card-section-container">
-        <a href="/">Home</a>
         <div className="card-container">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />

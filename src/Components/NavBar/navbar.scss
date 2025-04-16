@@ -1,5 +1,7 @@
 // navbar.scss
-
+.active {
+  cursor: pointer;
+}
 .navbar {
   background-color: #333;
   color: #fff;
@@ -9,10 +11,18 @@
   align-items: center;
 
   .navbar-logo {
-    margin-left: 2rem;
     display: flex;
+    align-items: center;
+    gap: 1rem;
     img {
       width: 5rem;
+    }
+    h1 {
+      a {
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer;
+      }
     }
   }
   .navbar-links {
@@ -20,24 +30,33 @@
 
     .socials {
       display: flex;
+      align-items: center;
       border-right: 1px solid black;
       ul {
         display: flex;
+        align-items: center;
         padding: 0.5rem;
 
         li {
           padding: 0.5rem;
           list-style: none;
+          a {
+            color: white;
+          }
         }
       }
     }
     ul {
       display: flex;
+      align-items: center;
       padding: 0.5rem;
 
       li {
         padding: 0.5rem;
         list-style: none;
+        a {
+          color: white;
+        }
       }
     }
   }
