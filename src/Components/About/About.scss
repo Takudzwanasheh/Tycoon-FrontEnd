@@ -1,6 +1,7 @@
 .aboutContainer {
   display: flex;
   flex-direction: column;
+  background-color: beige;
 
   .aboutSection {
     display: flex;
@@ -23,7 +24,7 @@
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
-    background-color: aquamarine;
+    background: rgba(239, 239, 206, 0.959);
 
     .Subscribe {
       padding: 0.3rem;

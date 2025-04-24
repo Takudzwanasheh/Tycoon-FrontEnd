@@ -6,7 +6,7 @@ export default function Home() {
     <div className="homePage">
       <div className="homeContainer">
         <h1>Welcome to Vennis Resources</h1>
-        <h2>Newly Featured Products</h2>
+        <h2>Featured Products</h2>
         <p>Check out our latest and most popular products.</p>
       </div>
       <NewProducts />

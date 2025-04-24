@@ -6,13 +6,15 @@
 
   .footer-links {
     margin: 10px 0;
-    a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 10px;
+    li {
+      list-style: none;
+      a {
+        color: #fff;
+        margin: 0 10px;
 
-      &:hover {
-        text-decoration: underline;
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }

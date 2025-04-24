@@ -1,5 +1,6 @@
 import "./card.scss";
 import products from "./Card";
+import { Link } from "react-router-dom";
 
 export default function ProductCard() {
   const ProductCard = ({ product }) => {
@@ -7,7 +8,9 @@ export default function ProductCard() {
       <div className="card">
         <div className="card-image-container">
           <img src={product.image} alt={product.name} className="card-image" />
-          <button className="cardButton">Add to Cart</button>
+          <button className="cardButton">
+            <Link to={"/cart"}>QUICK BUY</Link>
+          </button>
         </div>
         <h3>{product.name}</h3>
         <p>{product.description}</p>

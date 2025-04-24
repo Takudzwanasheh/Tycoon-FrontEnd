@@ -1,6 +1,10 @@
 .LoginContainer {
   background: linear-gradient(90deg, #f3f4f6 0%, #e5e7eb 100%);
   background-size: cover;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,12 +38,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       gap: 1rem;
       margin-bottom: 1rem;
 
       button {
-        width: 30%;
+        width: 35%;
         align-self: center;
         padding: 0.3rem;
 
@@ -55,7 +58,7 @@
 
         input {
           width: 100%;
-          padding: 0.3rem 1rem;
+          padding: 0.5rem 1rem;
           border: 1px solid #ccc;
         }
         span {

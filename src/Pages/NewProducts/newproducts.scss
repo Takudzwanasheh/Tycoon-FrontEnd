@@ -3,10 +3,25 @@
   border: 1px solid black;
   height: 20rem;
   overflow: hidden;
+  position: relative;
   padding: 0.1rem;
   line-height: 1rem;
   img {
     width: 15rem;
+  }
+
+  .image-container {
+    position: relative;
+    .cardButton {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+
+      &:hover {
+        background-color: black;
+        color: #ffff;
+      }
+    }
   }
 }
 
