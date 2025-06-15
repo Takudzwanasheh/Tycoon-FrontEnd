@@ -1,12 +1,9 @@
-import axios from "axios";
 import "./upload.scss";
-import { useState } from "react";
 import React from "react";
 
 export default function UpdateStock() {
 	const img =
 		"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy8MaB9SJmRK4EYAsjEHLx8c4FuM-fb4_miA&s";
-	const [errorMessage, setErrorMessage] = useState("");
 
 	return (
 		<div className='uploadContainer'>
@@ -22,7 +19,6 @@ export default function UpdateStock() {
 						name='price'
 					/>
 
-					{errorMessage && <span className='error'>{errorMessage}</span>}
 					<button type='submit'>Upload</button>
 				</div>
 			</form>

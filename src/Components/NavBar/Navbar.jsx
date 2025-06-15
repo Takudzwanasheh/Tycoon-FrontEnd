@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import vennis from "./Vennis.png";
 import "./navbar.scss";
 import Menu from "../Menu/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Instagram, Facebook, X, YouTube, Person } from "@mui/icons-material";
+import { Instagram, Facebook, X, YouTube } from "@mui/icons-material";
 import { NavLink } from "react-router-dom";
 
 export default function Navbar() {

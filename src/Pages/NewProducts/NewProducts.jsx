@@ -2,7 +2,6 @@ import "./newproducts.scss";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 export default function NewProducts() {
 	const [products, setProducts] = useState([]);

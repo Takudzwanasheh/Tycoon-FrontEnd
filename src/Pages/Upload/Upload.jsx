@@ -1,7 +1,6 @@
 import axios from "axios";
 import "./upload.scss";
 import { useState } from "react";
-import React from "react";
 
 export default function Upload() {
 	const img =

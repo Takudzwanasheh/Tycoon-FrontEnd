@@ -1,7 +1,5 @@
 import { useState } from "react";
-import Footer from "../Footer/Footer";
 import "./About.scss";
-import axios from "axios";
 
 export default function About() {
 	const [email, setEmail] = useState("");
@@ -45,29 +43,7 @@ export default function About() {
 					information, operational matters and any possible plans for taking
 					over the world!
 				</p>
-				<form
-					onSubmit={(data) => {
-						data.preventDefault();
-						if (!email) {
-							alert("Please enter a valid email address.");
-							return;
-						}
-						axios
-							.post("http://localhost:3001/email", { email })
-							.then(() => {
-								alert("Thank you for subscribing!");
-								setEmail("");
-							})
-							.catch((error) => {
-								if (error.response && error.response.status === 409) {
-									alert("This email address is already subscribed.");
-								} else {
-									alert("An error occurred. Please try again later.");
-								}
-							});
-					}}
-					className='Subscribe'
-				>
+				<form className='Subscribe'>
 					<input
 						autoComplete='off'
 						name='email'
