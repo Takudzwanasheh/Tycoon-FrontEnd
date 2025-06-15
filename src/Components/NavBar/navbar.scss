@@ -1,83 +1,88 @@
 // navbar.scss
 .active {
-  cursor: pointer;
+	cursor: pointer;
 }
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: #333;
-  position: relative;
-  color: #fff;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	background-color: rgb(56, 51, 51);
+	position: relative;
+	color: #fff;
+	padding: 1rem 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 
-  .navbar-logo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    .menuIcon {
-      cursor: pointer;
-      font-size: 2.5rem !important;
+	.navbar-logo {
+		display: flex;
+		align-items: center;
+		border-radius: 50%;
+		gap: 1rem;
+		img {
+			border-radius: 50%;
+		}
+		.menuIcon {
+			cursor: pointer;
+			font-size: 2.5rem !important;
 
-      &:hover {
-        background: black;
-      }
-    }
-    .menuBar {
-      display: none;
-      cursor: pointer;
+			&:hover {
+				background: black;
+			}
+		}
+		.menuBar {
+			display: none;
+			cursor: pointer;
 
-      @media (max-width: 768px) {
-        display: block;
-      }
-    }
-    img {
-      width: 5rem;
-    }
-    h1 {
-      a {
-        color: #fff;
-        text-decoration: none;
-        cursor: pointer;
-      }
-    }
-  }
-  .navbar-links {
-    display: flex;
+			@media (max-width: 768px) {
+				display: block;
+			}
+		}
+		img {
+			width: 5rem;
+		}
+		h1 {
+			font-size: 1.5rem;
+			a {
+				color: #fff;
+				text-decoration: none;
+				cursor: pointer;
+			}
+		}
+	}
+	.navbar-links {
+		display: flex;
 
-    .socials {
-      display: flex;
-      align-items: center;
-      border-right: 1px solid black;
-      ul {
-        display: flex;
-        align-items: center;
-        padding: 0.5rem;
+		.socials {
+			display: flex;
+			align-items: center;
+			border-right: 1px solid black;
+			ul {
+				display: flex;
+				align-items: center;
+				padding: 0.5rem;
 
-        li {
-          padding: 0.5rem;
-          list-style: none;
-          a {
-            color: white;
-          }
-        }
-      }
-    }
-    ul {
-      display: flex;
-      align-items: center;
-      padding: 0.5rem;
+				li {
+					padding: 0.5rem;
+					list-style: none;
+					a {
+						color: white;
+					}
+				}
+			}
+		}
+		ul {
+			display: flex;
+			align-items: center;
+			padding: 0.5rem;
 
-      li {
-        padding: 0.5rem;
-        list-style: none;
-        a {
-          color: white;
-        }
-      }
-    }
-  }
+			li {
+				padding: 0.5rem;
+				list-style: none;
+				a {
+					color: white;
+				}
+			}
+		}
+	}
 }

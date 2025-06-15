@@ -17,8 +17,8 @@ export default function Menu() {
 	return (
 		<div className='menu'>
 			<div className='menu-header'>
-				<CloseIcon style={{ fontSize: "3rem" }} onClick={handleCloseMenu} />
 				<h1>Menu</h1>
+				<CloseIcon style={{ fontSize: "2.5rem" }} onClick={handleCloseMenu} />
 			</div>
 			<ul className='menu-list'>
 				<li className='menu-item dropdown'>
@@ -35,29 +35,27 @@ export default function Menu() {
 						</li>
 					</ul>
 				</li>
-				<a href='#' className='menu-item'>
+				<li>
 					<Link to={"/products"}>ALL PRODUCTS</Link>
-				</a>
-				<a href='#' className='menu-item'>
+				</li>
+				<li>
 					<Link to={"/login"}>SECRET SALE</Link>
-				</a>
-				<a href='#' className='menu-item'>
+				</li>
+				<li>
 					<Link to={"/social-comments"}>SOCIAL COMMENTS </Link>
-				</a>
-
-				<a href='/#' className='menu-item'>
+				</li>
+				<li>
 					<Link to={"about"}>COUNTRY OF ORIGIN</Link>
-				</a>
-
-				<a href='#' className='menu-item'>
+				</li>
+				<li>
 					<Link to={"delivery"}>DELIVERY RATE</Link>
-				</a>
-				<a href='#' className='menu-item'>
+				</li>
+				<li>
 					<Link>PRODUCT TYPES</Link>
-				</a>
-				<a href='#' className='menu-item'>
+				</li>
+				<li>
 					<Link to={"/"}>PRODUCTS BY COUNTRY</Link>
-				</a>
+				</li>
 			</ul>
 		</div>
 	);

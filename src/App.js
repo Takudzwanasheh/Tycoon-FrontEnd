@@ -1,17 +1,16 @@
 import "./App.css";
 import About from "./Components/About/About";
-import ProductCard from "./Components/Card/ProductCard";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import Footer from "./Components/Footer/Footer";
-import RecipeReviewCard from "./Pages/Register/Register";
 import Home from "./Pages/Home/Home";
 import Navbar from "./Components/NavBar/Navbar";
 import Login from "./Pages/Login/Login";
 import NewProducts from "./Pages/NewProducts/NewProducts";
 import Upload from "./Pages/Upload/Upload";
 import Register from "./Pages/Register/Register";
+import Available from "./Pages/NewProducts/Available-Stock";
 import Menu from "./Components/Menu/Menu";
-import Error from "./Pages/Errors/Error";
+import UpdateStock from "./Pages/Upload/UpdateStock";
+import UpdateIndividualy from "./Pages/NewProducts/UpdateIndividualy";
 function App() {
 	const Layout = () => {
 		return (
@@ -20,7 +19,6 @@ function App() {
 					<Navbar />
 				</div>
 				<Outlet />
-				<Footer />
 			</div>
 		);
 	};
@@ -31,14 +29,20 @@ function App() {
 			children: [
 				{ path: "/", element: <Home /> },
 				{ path: "/add-product", element: <Upload /> },
-				{ path: "/products", element: <ProductCard /> },
-				{ path: "/new-products", element: <NewProducts /> },
+				{ path: "/tycoon-sales", element: <NewProducts /> },
 				{ path: "/about", element: <About /> },
+				{ path: "/stock", element: <Available /> },
+				{ path: "/update-stock", element: <UpdateStock /> },
+				{ path: "/byid/:id", element: <UpdateIndividualy /> },
 			],
 		},
 		{
 			path: "/about",
 			element: <About />,
+		},
+		{
+			path: "/stock",
+			element: <Available />,
 		},
 		{
 			path: "/login",
@@ -49,17 +53,8 @@ function App() {
 			element: <Register />,
 		},
 		{
-			path: "*",
-			element: <Error />,
-		},
-		{
 			path: "/menu",
 			element: <Menu />,
-		},
-
-		{
-			path: "/register",
-			element: <RecipeReviewCard />,
 		},
 	]);
 

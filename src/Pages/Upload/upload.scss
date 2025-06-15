@@ -4,8 +4,9 @@
 }
 
 .uploadContainer {
-	h1 {
-		padding: 0.5rem;
+	img {
+		width: 5rem;
+		border-radius: 50%;
 	}
 	span {
 		color: red;
@@ -31,6 +32,9 @@
 			flex-direction: column;
 			align-items: center;
 			gap: 1rem;
+			.error {
+				color: red;
+			}
 			input {
 				padding: 0.5rem;
 				width: 90%;
@@ -46,4 +50,8 @@
 			}
 		}
 	}
+}
+
+.error {
+	color: red;
 }

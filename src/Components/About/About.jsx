@@ -25,12 +25,6 @@ export default function About() {
 						marble, granite, quartz, and rare gemstones, each with its own
 						distinct character and charm.
 						<br /> <br />
-						At Vennis-Resources, we are passionate about sustainability and
-						ethical sourcing. We work closely with local artisans and suppliers
-						to ensure that our stones are responsibly mined and processed. Our
-						commitment to quality means that every piece is meticulously
-						inspected and crafted to meet the highest standards.
-						<br /> <br />
 						Whether you're an architect, designer, or homeowner, we provide
 						personalized service to help you find the perfect stone for your
 						project. From stunning countertops to breathtaking flooring, our
@@ -58,14 +52,24 @@ export default function About() {
 							alert("Please enter a valid email address.");
 							return;
 						}
-						axios.post("http://localhost:3001/email", { email }).then(() => {
-							alert("Thank you for subscribing!");
-							setEmail("");
-						});
+						axios
+							.post("http://localhost:3001/email", { email })
+							.then(() => {
+								alert("Thank you for subscribing!");
+								setEmail("");
+							})
+							.catch((error) => {
+								if (error.response && error.response.status === 409) {
+									alert("This email address is already subscribed.");
+								} else {
+									alert("An error occurred. Please try again later.");
+								}
+							});
 					}}
 					className='Subscribe'
 				>
 					<input
+						autoComplete='off'
 						name='email'
 						type='email'
 						placeholder='Your-Email @gmail.com'

@@ -1,41 +1,37 @@
-.card {
-  width: 15rem;
-  border: 1px solid black;
-  height: 20rem;
-  overflow: hidden;
-  position: relative;
-  padding: 0.1rem;
-  line-height: 1rem;
-  img {
-    width: 15rem;
-  }
+div {
+	.updateStock {
+		display: flex;
+		flex-direction: column;
+		width: 30%;
+		padding: 1rem;
+		margin: 1rem;
+		input {
+			padding: 0.2rem;
+			width: 90%;
+		}
+		button {
+			width: 50%;
+			padding: 0.2rem;
+			margin: 1rem;
+		}
+	}
+	table {
+		width: 80%;
+		border-collapse: collapse;
+	}
 
-  .image-container {
-    position: relative;
-    .cardButton {
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
+	th,
+	td {
+		border: 1px solid #000; /* Black border for cells */
+		padding: 8px; /* Spacing inside cells */
+		text-align: left; /* Align text to the left */
+	}
 
-      &:hover {
-        background-color: black;
-        color: #ffff;
-      }
-    }
-  }
-}
+	th {
+		background-color: #f2f2f2; /* Light gray background for header */
+	}
 
-.card-section-container {
-  .zoomable-image {
-    transition: transform 0.3s ease-in-out;
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
-  margin-left: 0.5rem;
-  .card-container {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+	tr:hover {
+		background-color: #e0e0e0; /* Highlight row on hover */
+	}
 }

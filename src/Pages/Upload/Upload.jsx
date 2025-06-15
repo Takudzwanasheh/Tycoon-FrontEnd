@@ -1,83 +1,148 @@
 import axios from "axios";
 import "./upload.scss";
 import { useState } from "react";
+import React from "react";
 
 export default function Upload() {
+	const img =
+		"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy8MaB9SJmRK4EYAsjEHLx8c4FuM-fb4_miA&s";
+	const [errorMessage, setErrorMessage] = useState("");
 	const [formData, setFormData] = useState({
-		StonePicture: "",
-		StoneName: "",
-		description: "",
+		productName: "",
 		price: "",
+		quantitySold: "",
+		ManageStockId: "",
+		description: "",
 	});
 
-	const handleInputChange = (e) => {
-		const { name, value, type, files } = e.target;
-		setFormData((prevData) => ({
-			...prevData,
-			[name]: type === "file" ? files[0] : value,
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setFormData((prev) => ({
+			...prev,
+			[name]: value,
 		}));
 	};
 
-	const [errorMessage, setErrorMessage] = useState("");
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		setErrorMessage("");
+		try {
+			await axios.post(
+				"https://tycoon-electronics-fd012c83f120.herokuapp.com/tycoon",
+				formData
+			);
+			alert("Product uploaded successfully!");
+			setFormData({
+				productName: "",
+				price: "",
+				quantitySold: "",
+				ManageStockId: "",
+				description: "",
+			});
+		} catch (error) {
+			setErrorMessage("Failed to upload. Please try again.");
+		}
+	};
+
+	// Input validation function
+	const validateInputs = () => {
+		if (!formData.productName.trim()) {
+			setErrorMessage("Product name is required.");
+			return false;
+		}
+		if (
+			!formData.price ||
+			isNaN(formData.price) ||
+			Number(formData.price) <= 0
+		) {
+			setErrorMessage("Enter a valid price.");
+			return false;
+		}
+		if (
+			!formData.quantitySold ||
+			isNaN(formData.quantitySold) ||
+			Number(formData.quantitySold) < 0
+		) {
+			setErrorMessage("Enter a valid quantity sold.");
+			return false;
+		}
+		if (
+			!formData.ManageStockId ||
+			isNaN(formData.ManageStockId) ||
+			Number(formData.ManageStockId) <= 0
+		) {
+			setErrorMessage("Enter a valid stock reference number.");
+			return false;
+		}
+		if (!formData.description.trim()) {
+			setErrorMessage("Product description is required.");
+			return false;
+		}
+		return true;
+	};
 
 	return (
 		<div className='uploadContainer'>
-			<h1>Admin</h1>
-			<h1>Add New Product</h1>
+			<img src={img} alt='logo' />
+			<h1>This Week Sales</h1>
 
 			<form
 				className='uploadImage'
-				onSubmit={(e) => {
+				onSubmit={async (e) => {
 					e.preventDefault();
-					if (
-						!formData.StonePicture ||
-						!formData.StoneName ||
-						!formData.description ||
-						!formData.price ||
-						isNaN(formData.price)
-					) {
-						setErrorMessage("Please fill all fields correctly.");
-						return;
-					}
 					setErrorMessage("");
-					axios.post("http://localhost:3001/vennis", formData).then(() => {
-						console.log("data uploaded successfully");
-						setFormData({
-							StonePicture: null,
-							StoneName: "",
-							description: "",
-							price: "",
-						});
+					if (!validateInputs()) return;
+					await handleSubmit(e);
+					setFormData({
+						productName: "",
+						price: "",
+						quantitySold: "",
+						ManageStockId: "",
+						description: "",
 					});
 				}}
 			>
 				<div className='uploadInputs'>
 					<input
 						type='text'
-						placeholder='Image URL.. '
-						name='StonePicture'
-						onChange={handleInputChange}
+						placeholder='Product Name.. '
+						name='productName'
+						value={formData.productName}
+						onChange={handleChange}
+						required
 					/>
 					<input
-						type='text'
-						placeholder='Stone Name'
-						name='StoneName'
-						value={formData.StoneName}
-						onChange={handleInputChange}
-					/>
-					<textarea
-						placeholder='Stone Description'
-						name='description'
-						value={formData.description}
-						onChange={handleInputChange}
-					></textarea>
-					<input
-						type='money'
-						placeholder='Price'
+						type='number'
+						placeholder='Product Price'
 						name='price'
 						value={formData.price}
-						onChange={handleInputChange}
+						onChange={handleChange}
+						required
 					/>
+					<input
+						type='number'
+						placeholder='Quantity Sold'
+						name='quantitySold'
+						value={formData.quantitySold}
+						onChange={handleChange}
+						required
+					/>
+					<input
+						type='number'
+						placeholder='Stock Reference Number'
+						name='ManageStockId'
+						value={formData.ManageStockId}
+						onChange={handleChange}
+						required
+					/>
+					<textarea
+						placeholder='Product Description'
+						name='description'
+						value={formData.description}
+						onChange={handleChange}
+						required
+					></textarea>
+
 					{errorMessage && <span className='error'>{errorMessage}</span>}
 					<button type='submit'>Upload</button>
 				</div>
