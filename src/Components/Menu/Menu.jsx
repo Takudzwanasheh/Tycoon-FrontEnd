@@ -22,7 +22,6 @@ export default function Menu() {
 			</div>
 			<ul className='menu-list'>
 				<li className='menu-item dropdown'>
-					<a>SPECIALS</a>
 					<ul className='dropdown-menu'>
 						<li>
 							<Link to={"delivery"}>AGATE</Link>

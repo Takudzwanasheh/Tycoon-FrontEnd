@@ -12,7 +12,7 @@ export default function UpdateIndividualy() {
 			.then((response) => {
 				setProduct(response.data);
 			});
-	}, []);
+	}, [id]);
 
 	const [Quantity, setQuantity] = useState(0);
 
