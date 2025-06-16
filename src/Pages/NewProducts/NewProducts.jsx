@@ -22,6 +22,7 @@ export default function NewProducts() {
 						<th>Product Name</th>
 						<th>Price $</th>
 						<th>Description</th>
+						<th>Quantity</th>
 						<th>Date</th>
 					</tr>
 				</thead>
@@ -38,6 +39,7 @@ export default function NewProducts() {
 							<tr key={idx}>
 								<td>{product.productName}</td>
 								<td>${product.price}</td>
+								<td>{product.Quantity}</td>
 								<td>{product.description}</td>
 								<td>{formattedDate}</td>
 							</tr>
