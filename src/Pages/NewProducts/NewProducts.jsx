@@ -39,8 +39,8 @@ export default function NewProducts() {
 							<tr key={idx}>
 								<td>{product.productName}</td>
 								<td>${product.price}</td>
-								<td>{product.Quantity}</td>
 								<td>{product.description}</td>
+								<td>{product.quantitySold}</td>
 								<td>{formattedDate}</td>
 							</tr>
 						);

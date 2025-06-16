@@ -15,7 +15,7 @@ export default function Navbar() {
 				<MenuIcon className='menuIcon' onClick={() => setMenuOpen(!menuOpen)} />
 				<img src={img} alt='Logo' />
 				<h1>
-					<NavLink to='/'>TYCOON ELECTRONICS</NavLink>
+					<NavLink to='/'>TYCOON-ELECTRONICS</NavLink>
 				</h1>
 			</div>
 			<div className='navbar-links'>

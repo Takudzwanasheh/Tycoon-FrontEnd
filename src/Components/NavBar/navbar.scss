@@ -42,7 +42,7 @@
 			width: 5rem;
 		}
 		h1 {
-			font-size: 1.5rem;
+			font-size: 1.2rem;
 			a {
 				color: #fff;
 				text-decoration: none;
@@ -51,7 +51,7 @@
 		}
 	}
 	.navbar-links {
-		display: flex;
+		display: none;
 
 		.socials {
 			display: flex;
@@ -82,6 +82,26 @@
 				a {
 					color: white;
 				}
+			}
+		}
+	}
+}
+
+@media (max-width: 360px) {
+	.navbar {
+		padding: 0.5rem 1rem;
+		.navbar-logo {
+			h1 {
+				font-size: 1.2rem;
+			}
+			img {
+				width: 3rem;
+			}
+		}
+		.navbar-links {
+			display: none;
+			.socials {
+				display: none;
 			}
 		}
 	}
