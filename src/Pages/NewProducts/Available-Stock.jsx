@@ -21,7 +21,7 @@ export default function Available() {
 					<tr>
 						<th>Product ID</th>
 						<th>Product Name</th>
-						<th>Price</th>
+						<th>Quantity</th>
 					</tr>
 				</thead>
 				<tbody>
